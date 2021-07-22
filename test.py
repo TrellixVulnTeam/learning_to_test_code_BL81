@@ -10,7 +10,7 @@ def test_case_2():
     assert 2 == main.doubleInt(1)
 
 
-class CitiesTestCase(unittest.TestCase):
+class HomeTestCase(unittest.TestCase):
 
   def test_index(self):
     tester = app.test_client(self)
