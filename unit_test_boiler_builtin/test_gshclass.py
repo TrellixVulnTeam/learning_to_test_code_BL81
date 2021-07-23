@@ -1,22 +1,14 @@
-import unittest
-from main import *
 from gshclass import *
 import pytest
+import os
 
-def test_hello():
-    assert "Hello testing world!" == hello()
-
-"""class TestClass:
-    def test_one(self):
-        x = "this"
-        assert "h" in x
-
-    def test_two(self):
-        x = "hello"
-        assert hasattr(x, "check")
-"""
 # testing constructor of GoogleSheetHelper class
 cred_path = "/home/batman/Desktop/learning_to_test_code/unit_test_boiler_builtin/master_key.json"
-def test_make_helper():
+#cred_path = os.environ.get("CRED_JSON")
+
+# test constructor
+def test_make_gsh_helper():
     gsh1 = GoogleSheetHelper(cred_path, "google_postgres", "existing")
     assert gsh1.cred_json == cred_path
+    assert gsh1.spreadsheetName == "google_postgres"
+    assert gsh1.sheetName == "existing"
