@@ -8,7 +8,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.types import Integer, Text, String, DateTime
 import datetime
 from dotenv import load_dotenv
-
+# https://oauth2client.readthedocs.io/en/latest/source/oauth2client.service_account.html
 # creds
 load_dotenv()
 cred_path = os.environ.get("cred_json")

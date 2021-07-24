@@ -23,7 +23,6 @@ def test_columns_existing_tab():
     assert len(gsh_existing.getDataframe().columns) == len(expected_columns)
 
 
-
 def test_columns_calls_tab():
     gsh_calls = GoogleSheetHelper(cred_path, "google_postgres", "calls")
     expected_columns = ['Phone Number', 'gender', 'dob', 'weight', 'height', 'activity',
