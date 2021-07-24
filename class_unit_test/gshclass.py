@@ -7,9 +7,12 @@ import sqlalchemy
 from sqlalchemy import create_engine
 from sqlalchemy.types import Integer, Text, String, DateTime
 import datetime
+from dotenv import load_dotenv
 
-#cred_json = os.environ['json_path']
-cred_json = "/home/batman/Desktop/google_postgres/key/master_key.json" 
+# creds
+load_dotenv()
+cred_path = os.environ.get("cred_json")
+
 class GoogleSheetHelper:
     """Helper claas to pull data from googlesheets"""
     def __init__(self, cred_json, spreadsheetName, sheetName):
@@ -38,3 +41,9 @@ class GoogleSheetHelper:
         """Returns sheets this gspread (self.client) authorized to view/edit"""
         available_sheets = self.client.openall()
         return [sheet.title for sheet in available_sheets]
+
+# gsh1 = GoogleSheetHelper(cred_path, "google_postgres", "existing")
+# print(type(gsh1))
+
+gsh1 = GoogleSheetHelper(cred_path, "google_postgres", "time")
+print(gsh1.getDataframe().columns)
