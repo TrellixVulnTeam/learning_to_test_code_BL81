@@ -3,6 +3,21 @@ from functools import wraps
 import unittest
 from unittest import TestCase
 
+def decorator_factory(multiplier):
+    def decorator(func):
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+            return func(*args, **kwargs) * multiplier
+        return wrapper
+    return decorator
+
+@decorator_factory(3)
+def get_string(str):
+    return str
+
+# print(get_string("n"))
+
+
 def engineer(func):
     @wraps(func)
     def wrapper_func(*args, **kwargs):
@@ -14,4 +29,4 @@ def engineer(func):
 def introduce():
     return "...Person"
 
-print(introduce())
+# print(introduce())
