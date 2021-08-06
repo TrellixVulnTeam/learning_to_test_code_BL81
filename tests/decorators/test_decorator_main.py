@@ -1,5 +1,5 @@
 import unittest
-from main import *
+from scripts.decorators.decorator_main import *
 
 class TestDecoratorFactory(TestCase):
     def test_string_multiplier(self):
