@@ -1,4 +1,4 @@
-from scripts.flask import flask_main
+from scripts.flask.hello_world import flask_main
 import unittest
 
 
