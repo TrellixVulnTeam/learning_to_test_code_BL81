@@ -1,7 +1,4 @@
-from scripts.codingbat import string_bits # string_bits is file
-
-def test_return_string():
-    assert string_bits.return_string("z") == "z"
+from scripts.codingbat.warmup2 import string_bits # string_bits is file
 
 def test_string_bits():
     assert string_bits.string_bits("Hello") == "Hlo"
