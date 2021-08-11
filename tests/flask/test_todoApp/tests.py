@@ -1,14 +1,8 @@
 #!/usr/bin/env python
-# import unittest
-# from app import create_app, db
-# from app.models import Todo
-# from config import Config
-
 import unittest
 from scripts.flask.todoApp.app import create_app, db
 from scripts.flask.todoApp.app.models import Todo
 from scripts.flask.todoApp.config import Config
-
 
 class TestConfig(Config):
     TESTING = True
