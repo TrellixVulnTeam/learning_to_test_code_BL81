@@ -1,0 +1,1 @@
+from scripts.mapmaker.invalid_point_generation import
