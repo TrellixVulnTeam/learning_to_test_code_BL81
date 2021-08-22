@@ -1,15 +1,13 @@
 
-class Point:
-    def __init__(self, city, lat, long):
-        self.lat = lat
-        self.long = long
-        self.city = city
+class Point():
+    def __init__(self, name, latitude, longitude):
+        self.name = name
 
-        if not (-90 <= lat <= 90) or not (-180 <= long <= 180):
-            raise ValueError("Invalid latitude, longitude combination")
+        # if not (-90 <= latitude <= 90) or not (-180 <= longitude <= 180):
+        #     raise ValueError("Invalid latitude, longitude combination.")
+        self.latitude = latitude
+        self.longitude = longitude
+
 
     def get_lat_long(self):
-        return (self.lat, self.long)
-
-p1 = Point("Pleasanton", -20.5, 30.5)
-print(p1.get_lat_long())
+        return (self.latitude, self.longitude)
