@@ -39,6 +39,8 @@ def quickSort(array, low, high):
     # recursive call on the right of pivot
     quickSort(array, pi + 1, high)
 
-data = [8, 7, 2, 1, 0, 9, 6]
-print(f"Unsorted Array: {data}")
-print(f"Sorted Array: ",quickSort(data, 0, len(data) - 1)
+    return array
+
+# data = [8, 7, 2, 1, 0, 9, 6]
+# print(f"Unsorted Array: {data}")
+# print(f"Sorted Array: ",quickSort(data, 0, len(data) - 1))
