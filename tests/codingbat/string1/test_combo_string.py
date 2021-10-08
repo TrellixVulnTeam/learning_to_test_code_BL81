@@ -1,4 +1,8 @@
-from scripts.codingbat.string1.combo_string import combo_string, combo_string_refactor, combo_string_refactor_2
+from scripts.codingbat.string1.combo_string import (
+        combo_string,   
+        combo_string_refactor, 
+        combo_string_refactor_2
+    )
 
 class Test:
     test_cases = [
