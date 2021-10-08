@@ -28,3 +28,7 @@ def combo_string_refactor(a: str, b: str) -> str:
     outside_greater = max(a,b, key=len)
     inside_less = min(a,b, key=len)
     return inside_less + outside_greater + inside_less
+
+def combo_string_refactor_2(a: str, b: str) -> str:
+    outside_greater, inside_less = max(a,b, key=len), min(a,b, key=len)
+    return inside_less + outside_greater + inside_less
