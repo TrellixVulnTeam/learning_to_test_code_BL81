@@ -10,11 +10,6 @@ combo_string('aaa', 'b') → 'baaab'
 a = "Hello"
 b = "hi"
 
-outside = a if len(a) < len(b) else b
-inside = a if len(a) > len(b) else b
-
-print(outside + inside + outside)
-
 def combo_string(a, b):
     outside = a if len(a) < len(b) else b
     inside = a if len(a) > len(b) else b
