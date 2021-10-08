@@ -20,4 +20,11 @@ def combo_string(a, b):
     inside = a if len(a) > len(b) else b
     return outside + inside + outside
 
-print(combo_string('Hello', 'hi'))
+############
+# 10-18-21 #
+############
+
+def combo_string_refactor(a: str, b: str) -> str:
+    outside_greater = max(a,b, key=len)
+    inside_less = min(a,b, key=len)
+    return inside_less + outside_greater + inside_less
