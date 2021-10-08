@@ -8,8 +8,12 @@ left2('Hi') → 'Hi'
 """
 
 str1 = "Hello"
-output = str1[2:] + str1[:2]
-print(output)
 
-def left2(str):
-  return str[2:] + str[:2]
+def left2(str, rotate_num):
+  return str[rotate_num:] + str[:rotate_num]
+
+def left2_refactor(str1: str, rotate_num: int, *args) -> str:
+  left_chunk_before = str1[:rotate_num]
+  right_chunk_before = str1[rotate_num:]
+  return right_chunk_before + left_chunk_before
+
