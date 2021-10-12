@@ -1,8 +1,8 @@
-from scripts.hackerrank.fizz_buzz import fizzBuzz
+from scripts.hackerrank.fizzBuzz import fizzBuzz
 
 class Test:
     test_cases = [
-        [(15), [1, 2, "Fizz", 4, "Buzz", "Fizz", 7, 8, "Fizz", "Buzz", 11, "Fizz", 13, 14, "FizzBuzz"]]
+        [15, [1, 2, "Fizz", 4, "Buzz", "Fizz", 7, 8, "Fizz", "Buzz", 11, "Fizz", 13, 14, "FizzBuzz"]]
     ]
     testable_functions = [fizzBuzz]
 
