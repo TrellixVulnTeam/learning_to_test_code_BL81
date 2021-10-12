@@ -1,0 +1,1 @@
+from scripts.hackerrank.lonelyInteger import lonelyInteger

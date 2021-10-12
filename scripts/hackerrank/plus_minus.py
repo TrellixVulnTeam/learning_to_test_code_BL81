@@ -11,9 +11,9 @@ def plus_minus(arr):
     for i in range(len(params)):
         params[i] = format(params[i], '.6f')
 
-    # NOTE: cant do this!
+    # NOTE: why cant I do this?
     # for p in params:
-    #     p = 0
+    #     p = format(p, '.6f')
     
     return params
 

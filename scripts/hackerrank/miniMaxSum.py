@@ -13,9 +13,9 @@ import sys
 #
 def one_removed(arr):
     one_removed = []
-    for idx, element in enumerate(arr):
+    for element in arr:
         arr_copy = arr[:]
-        arr_copy.remove(arr[idx])
+        arr_copy.remove(element)
         one_removed.append(arr_copy)
     return one_removed
 
