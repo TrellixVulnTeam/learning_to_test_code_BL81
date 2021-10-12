@@ -10,4 +10,8 @@ class Test:
     testable_functions = [iterative_string_perms]
 
     def test_iterative_string_perms(self):
-        pass
+        for f in self.testable_functions:
+            for case, expected in self.test_cases:
+                assert f(case) == expected
+
+    
