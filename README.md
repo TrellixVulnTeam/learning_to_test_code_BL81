@@ -6,4 +6,4 @@ My repo for learning how to test software in python
 /PYTHONPATH=$(pwd)/ python3 -m pytest
 '''
 
-![Sample Output](usagePics/pyest_usage_current.png)
+![Sample Output](https://github.com/k-zehnder/learning_to_test_code/blob/main/usagePics/pytest_usage_current.png)
