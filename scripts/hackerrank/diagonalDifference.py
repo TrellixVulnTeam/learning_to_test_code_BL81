@@ -41,9 +41,7 @@ def diagonalDifference2(arr):
     col_idx = 0
     left_right_sum = 0
     for row in range(nrows):
-        #print(f"col index: {col_idx}")
         for col in range(ncols):
-            #print(f"row col {row, col, arr[row][col]}")
             if col == col_idx:
                 left_right_sum += arr[row][col_idx]        
         col_idx += 1
@@ -51,7 +49,7 @@ def diagonalDifference2(arr):
     col_idx = len(arr) - 1
     right_left_sum = 0
     for row in range(nrows):
-        for col in range(0, ncols):
+        for col in range(ncols):
             print(arr[row][col])
             if col == col_idx:
                 print(arr[row][col])
