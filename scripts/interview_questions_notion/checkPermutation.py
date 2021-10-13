@@ -2,7 +2,6 @@
 import unittest
 from collections import Counter
 
-
 def check_permutation_by_sort(s1, s2):
     if len(s1) != len(s2):
         return False
