@@ -24,6 +24,9 @@ class Test:
             for case, expected in self.test_cases:
                 assert f(case[0], case[1]) == expected
 
-    def test_solution(self):
+    def test_solution_twoSum(self):
         for case, expected in self.test_cases:
             assert expected == self.solution.twoSum(case[0], case[1])
+
+    def test_solution_twoSumHashMap(self):
+        pass

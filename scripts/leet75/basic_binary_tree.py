@@ -16,3 +16,11 @@ def display(tree: Node | None) -> None:
 
 n0 = Node(0)
 display(n0)
+
+
+class Solution:
+    def init_node(self):
+        pass
+
+    def display(self):
+        pass
