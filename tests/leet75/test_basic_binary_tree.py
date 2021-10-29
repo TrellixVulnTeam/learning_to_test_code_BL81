@@ -1,11 +1,15 @@
+from copy import copy, deepcopy
 from scripts.leet75.basic_binary_tree import Node, sample_tree
 
 class Test:
+
     test_cases = [
         [Node(0), 0],
         [Node(1), 1]
     ]
-    testable_functions = ["traverse_inorder", "traverse_preorder", "traverse_postorder", "depth_of_tree"]
+
+    # returns root node of built-tree
+    node0 = sample_tree()
 
     def test_node_str(self):
         node = Node(0)
@@ -14,8 +18,7 @@ class Test:
 
     def test_sample_tree(self):
         # returns root node of built-tree
-        sample_tree_root = sample_tree()
-        assert [0, 2, 1] == [sample_tree_root.data, sample_tree_root.right.data, sample_tree_root.left.data]
+        assert [0, 2, 1] == [self.node0.data, self.node0.right.data, self.node0.left.data]
 
     def test_traversal_inorder(self):
-        pass
+        assert [3, 1, 4, 0, 5, 2, 6] == self.node0.traverse_inorder()

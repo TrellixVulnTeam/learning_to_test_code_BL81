@@ -8,13 +8,22 @@ class Node:
         self.right = None
         self.left = None
 
-    def traverse_inorder(self):
-        pass
+    # need global variable if not in arg b/c recursive
+    def traverse_inorder(self, output_return=[]):
+        if self.left:
+            self.left.traverse_inorder()
+        print(self.data, end=" ")
+        output_return.append(self.data)
+        if self.right:
+            self.right.traverse_inorder()
+        return output_return
 
-    def traverse_preorder(self):
-        pass
+    # need global variable if not in arg b/c recursive
+    def traverse_preorder(self, output_return=[]):
+        print(self.data, end=" ")
 
-    def traverse_postorder(self):
+    # need global variable if not in arg b/c recursive
+    def traverse_postorder(self, output_return=[]):
         pass
 
     def depth_of_tree(self):
@@ -26,7 +35,8 @@ class Node:
 def sample_tree():
     node0 = Node(0)
     node0.left, node0.right = Node(1), Node(2)
-    node0.left.left, node0.right.right = Node(3), Node(4)
+    node0.left.left, node0.left.right = Node(3), Node(4)
+    node0.right.left, node0.right.right = Node(5), Node(6)
     return node0
     
 
@@ -35,8 +45,5 @@ if __name__ ==  "__main__":
 
     values = [sample_tree_root.data, sample_tree_root.right.data, sample_tree_root.left.data]
 
-    print("{}, {}, {}".format(
-        values[0], 
-        values[1], 
-        values[2]
-        ))
+    sample_tree_root.traverse_inorder()
+    print(sample_tree_root.dicts)
