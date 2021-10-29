@@ -27,9 +27,13 @@ class Solution:
             r += 1
         return maxProfit
 
+if __name__ == "__main__":
+    prices = [7, 1, 5, 3, 6, 4]                   
+    solution = Solution()
+    maxProfit = solution.maxProfit(prices)
+    print(f"max profit: {maxProfit}")
 
-prices = [7, 1, 5, 3, 6, 4]                   
-solution = Solution()
-maxProfit = solution.maxProfit(prices)
-print(f"max profit: {maxProfit}")
+    nums = [4, 2, 1, 7, 8, 1, 2, 8, 1, 0]
+    for i in range(len(nums)):
+        print(nums[i:i+3])
 
