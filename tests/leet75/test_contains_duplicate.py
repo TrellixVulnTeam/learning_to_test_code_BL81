@@ -16,3 +16,7 @@ class Test:
     def test_solution(self):
         for case, expected in self.test_cases:
             assert expected == self.solution.contains_duplicate(case)
+
+    def test_solution_sliding_window(self):
+        for case, expected in self.test_cases:
+            assert expected == self.solution.contains_duplicate_sliding_window(case)

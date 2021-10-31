@@ -19,6 +19,18 @@ class Solution:
         print(seen, duplicates)
         return len(duplicates) > 0
 
+    def contains_duplicate_sliding_window(self, nums: List[int]) -> bool:
+        l, r = 0, 1
+        nums.sort()
+
+        while r < len(nums):
+            if nums[l] == nums[r]:
+                return True
+            else:
+                l += 1
+                r += 1
+        return False
+
 if __name__ == "__main__":
     nums = [1,2,3,1]
     solution = Solution()

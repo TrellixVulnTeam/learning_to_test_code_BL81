@@ -17,7 +17,6 @@ class Test:
         assert node.__str__() == str(node.data)
 
     def test_sample_tree(self):
-        # returns root node of built-tree
         assert [0, 2, 1] == [self.node0.data, self.node0.right.data, self.node0.left.data]
 
     def test_traversal_inorder(self):
