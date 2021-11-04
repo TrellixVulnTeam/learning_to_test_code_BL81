@@ -1,12 +1,8 @@
-
 class BinarySearchTree:
     def __init__(self, data):
         self.data = data 
         self.left = None
         self.right = None
-
-    def __str__(self):
-        return str(self.data)
 
     def insert(self, data):
         if data < self.data:
@@ -30,10 +26,21 @@ class BinarySearchTree:
             print(node.data)
             self._inorder(node.right)
 
+    def __str__(self):
+        return str(self.data)
+        
 if __name__ == "__main__":
     bst = BinarySearchTree(8)
     bst.insert(10)
     bst.insert(9)
 
+
     bst.inorder()
-    #print([i for i in bst.inorder()])
+
+    # nums = [1, 2, 3, 4, 5]
+    # for num in nums:
+    #     bst.insert(num)
+
+    # 
+    # for x in bst.inorder():
+    #     print(x)
