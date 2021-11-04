@@ -1,0 +1,18 @@
+         29 function calls (17 primitive calls) in 0.054 seconds
+
+   Ordered by: cumulative time
+   List reduced from 11 to 10 due to restriction <10>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.054    0.054 tmp_profile_decorator.py:110(product_counter_v3)
+        1    0.000    0.000    0.054    0.054 __init__.py:581(__init__)
+        1    0.000    0.000    0.054    0.054 __init__.py:649(update)
+        1    0.054    0.054    0.054    0.054 {built-in method _collections._count_elements}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.isinstance}
+        1    0.000    0.000    0.000    0.000 abc.py:117(__instancecheck__)
+        1    0.000    0.000    0.000    0.000 {built-in method _abc._abc_instancecheck}
+      7/1    0.000    0.000    0.000    0.000 abc.py:121(__subclasscheck__)
+      7/1    0.000    0.000    0.000    0.000 {built-in method _abc._abc_subclasscheck}
+        7    0.000    0.000    0.000    0.000 _collections_abc.py:409(__subclasshook__)
+
+

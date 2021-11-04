@@ -21,8 +21,7 @@ class Solution:
 
     def contains_duplicate_sort(self, nums: List[int]) -> bool:
         l, r = 0, 1
-        nums.sort()
-
+        nums.sort() # this solution depends on sorting
         while r < len(nums):
             if nums[l] == nums[r]:
                 return True
