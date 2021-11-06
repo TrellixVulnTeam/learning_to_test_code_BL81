@@ -1,10 +1,25 @@
 from copy import copy, deepcopy
-from scripts.leet75.basic_binary_tree import Node, sample_tree
+from scripts.leet75.basic_binary_tree import create_tree, inorder, inorder_pythonic
+
 
 class Test:
 
     test_cases = [
-        [Node(0), 0],
-        [Node(1), 1]
+        [],
+        []
     ]
+
+    def test_create_tree(self):
+        tree = create_tree()
+        assert 0 == tree.data
+        assert 1 == tree.left.data
+        assert 2 == tree.right.data
+
+    def test_inorder(self):
+        tree = create_tree()
+        inorder(tree)
+
+    def test_inorder_pythonic(self):
+        tree = create_tree()
+        assert [1, 0, 2] == inorder_pythonic(tree)
 
