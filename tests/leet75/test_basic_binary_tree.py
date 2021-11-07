@@ -1,5 +1,5 @@
 from copy import copy, deepcopy
-from scripts.leet75.basic_binary_tree import create_tree, inorder, inorder_pythonic
+from scripts.leet75.basic_binary_tree import create_tree, inorder, inorder_pythonic, depth_of_tree
 
 
 class Test:
@@ -23,3 +23,9 @@ class Test:
         tree = create_tree()
         assert [1, 0, 2] == inorder_pythonic(tree)
 
+    def test_is_full(self):
+        pass
+
+    def test_depth_of_tree(self):
+        tree = create_tree()
+        assert 2 == depth_of_tree(tree)

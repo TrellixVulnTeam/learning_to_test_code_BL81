@@ -17,10 +17,15 @@ def create_tree() -> None:
     return node0
 
 def inorder(root: Node) -> None:
+    # how to I test functions which print to console?
     pass
 
 def inorder_pythonic(root: Node) -> None:
     return inorder_pythonic(root.left) + [root.data] + inorder_pythonic(root.right) if root else []
+
+def depth_of_tree(root: Node) -> int:
+    return 1 + max(depth_of_tree(root.left), depth_of_tree(root.right)) if root else 0
+
 
 if __name__ == "__main__":
     node0 = create_tree()
