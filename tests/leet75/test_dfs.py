@@ -1,7 +1,5 @@
 from scripts.leet75.dfs import dfs, bfs, create_graph
 
-"""test_cases = [create_graph(),['A', 'B', 'D', 'F', 'E', 'C']]"""
-
 class Test:
     test_cases = [
         ['A', 'B', 'D', 'E', 'F', 'C'],
