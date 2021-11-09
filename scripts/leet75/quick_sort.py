@@ -1,7 +1,7 @@
-from typing import List, Dict
+from typing import List
 
 # function to find partition position
-def partition(array: List[List[int]], low: int, high: int) -> int:
+def partition(array: List[int], low: int, high: int) -> int:
     # select pivot
     pivot = array[high]
 
@@ -10,7 +10,7 @@ def partition(array: List[List[int]], low: int, high: int) -> int:
 
     # traverse all elements
     # compare each element with pivot
-    for j in range(len(array)):
+    for j in range(low, high):
         if array[j] < pivot:
             # if element smaller than pivot found
             # swap it with greater element pointed to by i
@@ -24,8 +24,20 @@ def partition(array: List[List[int]], low: int, high: int) -> int:
 
     # return position from where partition is done
     return i + 1
-        
-
 
 def quick_sort(array, low, high):
-    pass
+    if low < high:
+        pi = partition(array, low, high)
+        quick_sort(array, low, pi - 1)
+        quick_sort(array, pi + 1, high)
+    return array
+
+if __name__ == "__main__":
+    data = [8, 7, 2, 1, 0, 9, 6]
+    print("Unsorted array")
+    print(data)
+
+    size = len(data)
+    quick_sort(data, 0, size - 1)
+    print("Sorted array in ascending order:")
+    print(data)
