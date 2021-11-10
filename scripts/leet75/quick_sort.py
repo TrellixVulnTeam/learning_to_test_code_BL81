@@ -1,34 +1,37 @@
 from typing import List
 
-# function to find partition position
-def partition(array: List[int], low: int, high: int) -> int:
-    # select pivot
+def partition(array, low, high):
+    # find pivot
     pivot = array[high]
 
     # pointer for greater element
     i = low - 1
 
-    # traverse all elements
-    # compare each element with pivot
+    # traverse and find element less than pivot
+    # low, high
     for j in range(low, high):
         if array[j] < pivot:
-            # if element smaller than pivot found
-            # swap it with greater element pointed to by i
+            # increment i
             i += 1
 
-            # swapping element at i with element at j 
+            # swap element less than pivot with greater element pointed by i
             array[i], array[j] = array[j], array[i]
-    
-    # swap pivot element with greater element specified by i 
-    array[i + 1], array[high] = array[high], array[i + 1]
+    # swap pivot element with greater element pointed by i
+    array[i+1], array[high] = array[high], array[i+1]
 
-    # return position from where partition is done
-    return i + 1
+    # return the position from where partition is done
+    return i+1
+        
 
 def quick_sort(array, low, high):
     if low < high:
+        # get partition index
         pi = partition(array, low, high)
+
+        # call recursively on left side
         quick_sort(array, low, pi - 1)
+
+        # call recursively on right side
         quick_sort(array, pi + 1, high)
     return array
 
