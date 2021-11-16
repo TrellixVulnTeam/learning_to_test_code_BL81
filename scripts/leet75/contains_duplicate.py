@@ -19,16 +19,23 @@ class Solution:
         print(seen, duplicates)
         return len(duplicates) > 0
 
-    def contains_duplicate_sliding_window(self, nums: List[int]) -> bool:
+    def contains_duplicate_sort(self, nums: List[int]) -> bool:
         l, r = 0, 1
-        nums.sort()
-
+        nums.sort() # this solution depends on sorting
         while r < len(nums):
             if nums[l] == nums[r]:
                 return True
             else:
                 l += 1
                 r += 1
+        return False
+
+    def contains_duplicate_hashset(self, nums: List[int]) -> bool:
+        hashset = set()
+        for num in nums:
+            if num in hashset:
+                return True
+            hashset.add(num)
         return False
 
 if __name__ == "__main__":
