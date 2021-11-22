@@ -19,7 +19,6 @@ class Test:
 
     def test_solution_contains_duplicate_sort(self):
         for case, expected in self.test_cases:
-            assert expected == self.solution.contains_duplicate_sliding_window(case)
             assert expected == self.solution.contains_duplicate_sort(case)
 
     def test_contains_duplicate_hashset(self):
