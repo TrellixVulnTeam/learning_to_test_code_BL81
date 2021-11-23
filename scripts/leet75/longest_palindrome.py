@@ -1,13 +1,14 @@
 from typing import Dict, List
 
 class Solution:
-    def longestPalindrome(self, s: str) -> str:
+    # def longestPalindrome(self, s: str) -> str:
         # for i in range(0, len(s)):
         #     for j in range(len(s), -1, -1):
         #         substring = s[i:j]
         #         if substring == substring[::-1] and len(substring) > 2:
         #             return substring
         # return ""
+        
     def bf_longestPalindrome(self, s: str) -> str:    
         longest_palindrome = ""  
         for i in range(len(s)):
@@ -19,6 +20,6 @@ class Solution:
 
 if __name__ == "__main__":
     s = "abbb"
-    s = "cbbd"
+    # s = "cbbd"
     solution = Solution()
     print(solution.bf_longestPalindrome(s))

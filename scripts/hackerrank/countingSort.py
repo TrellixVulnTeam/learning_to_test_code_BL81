@@ -1,27 +1,22 @@
 from collections import Counter
 
-arr = [1, 1, 3, 2, 1]
 
-def countingSort(arr):
-    counts = {}
-    for i in range(0, 101):
-        counts[i] = counts.get(i, 0)
-    for i in range(len(arr)):
-        counts[arr[i]] = counts.get(arr[i], 0) + 1
-    # for element in arr:
-    #     counts[element] = counts.get(element, 0) + 1
-    #     print(element, counts)
-    #print(counts)
-    return [i for i in counts.values()]
+class Solution:
+    
+    def countingSort(self, nums):        
+        counts = {}
+        for i in range(100):
+            counts[i] = 0
+        for num in nums:
+            counts[num] = counts.get(num, 0) + 1
+        return ([v for (k, v) in counts.items()])
 
+if __name__ == "__main__":
+    long_string = "63 25 73 1 98 73 56 84 86 57 16 83 8 25 81 56 9 53 98 67 99 12 83 89 80 91 39 86 76 85 74 39 25 90 59 10 94 32 44 3 89 30 27 79 46 96 27 32 18 21 92 69 81 40 40 34 68 78 24 87 42 69 23 41 78 22 6 90 99 89 50 30 20 1 43 3 70 95 33 46 44 9 69 48 33 60 65 16 82 67 61 32 21 79 75 75 13 87 70 33"
+    long_string = list(map(lambda x: int(x), long_string.split(" ")))
+    print(long_string)
 
-print(countingSort(arr))
-
-# 1 2 3 4 5
-# 6 7 8 9 10
-# 11 12 13 14
-# 16 17 18 19
-
-# row 0 : col 0
-# row 1 : col 1
-# row 2 : col 2
+    
+    solution = Solution()
+    print(solution.countingSort(long_string))
+    
