@@ -9,7 +9,7 @@ class Solution:
         for i in range(len(s)):
             for j in range(1, len(s) + 1):
                 if sum(s[i:j]) == d and len(s[i:j]) == m:
-                    matches.append((s[i:j]))
+                    matches.append(s[i:j])
         return len(matches)
         
         
