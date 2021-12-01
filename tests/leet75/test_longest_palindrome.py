@@ -7,10 +7,10 @@ class Test:
         ["cbbd", "bb"]
     ]
     
-    def test_longest_palindrome(self):
-        solution = Solution()
-        for case, expected in self.test_cases:
-            assert expected == solution.longestPalindrome(case)
+    # def test_longest_palindrome(self):
+    #     solution = Solution()
+    #     for case, expected in self.test_cases:
+    #         assert expected == solution.longestPalindrome(case)
         
     def test_bf_longest_palindrome(self):
         solution = Solution()
