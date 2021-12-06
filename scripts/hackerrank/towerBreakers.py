@@ -1,22 +1,16 @@
-from itertools import permutations
 
-def isOkay(n):
-    l = []
-    for i in range(1, n+1):
-        if n % i == 0:
-            print(i,n)
-            l.append(i)
-    # print([i for i in permutations(l)]
+# see: https://www.hackerrank.com/challenges/one-month-preparation-kit-tower-breakers-1/forum?isFullScreen=true&h_l=interview&playlist_slugs%5B%5D=preparation-kits&playlist_slugs%5B%5D=one-month-preparation-kit&playlist_slugs%5B%5D=one-month-week-two
 
-    print(l)
-    for i in range(len(l)):
-        for j in range(0, len(l)+1):
-            tmp = []
-            for k in range(i, j):
-                tmp.append(l[k])
-            print(tmp)
-            
+"""
+The simple explanation to this is if number of towers is even P2 can always mirror the moves done by P1 and if number of towers are odd P1 reduces one of the towers to 1 and then uses exact same mirroring strategy to beat P2. Unless ofcourse if all towers all aready of size 1 then P1 loses.
+"""
 
-            
+def towerBreakers(n, m):
+    if n%2==0 or m==1:
+        return 2
+    else:
+        return 1
+    
 if __name__ == "__main__":
-    isOkay(6)
+    print(towerBreakers(2, 2))
+    # expected = 2
