@@ -9,6 +9,7 @@ def findZigZagSequence(a, n):
         a[st], a[ed] = a[ed], a[st]
         st = st + 1
         ed = ed - 1
+        
     output = []
     for i in range (n):
         if i == n-1:
@@ -62,3 +63,4 @@ if __name__ == "__main__":
     print(findZigZagSequence(a, n))
     print(a[n-2])
     print(int(n+1)/2-1)
+    
