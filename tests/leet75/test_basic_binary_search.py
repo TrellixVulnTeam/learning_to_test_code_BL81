@@ -7,10 +7,6 @@ class Test:
         [[3, 4, 5, 6, 7, 8, 9], 4, 1]
 
     ]
-    
-    # def test_binary_search(self):
-    #     solution = Solution()
-    #     assert self.test_cases[2] == solution.binary_search(self.test_cases[0], self.test_cases[1], 0, len(self.test_cases[0]) - 1)
         
     def test_binary_search(self):
         solution = Solution()
