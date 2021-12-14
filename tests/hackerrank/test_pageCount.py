@@ -1,4 +1,4 @@
-from scripts.hackerrank.pageCount import pageCount
+from scripts.hackerrank.pageCount import pageCount,pageCount2, pageCount_fails_one_test
 
 
 class Test:
@@ -6,7 +6,7 @@ class Test:
     test_cases = [
         ([5, 3], 1)
     ]
-    testable_functions = [pageCount]
+    testable_functions = [pageCount, pageCount2, pageCount_fails_one_test]
     
     def test_pageCount(self):
         for f in self.testable_functions:
