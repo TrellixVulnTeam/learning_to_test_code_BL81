@@ -1,4 +1,4 @@
-from scripts.leet75.find_min_rotated_sorted_array import Solution
+from scripts.hackerrank.find_min_rotated_sorted_array import Solution
 
 
 class Test:
