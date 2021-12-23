@@ -1,2 +1,0 @@
-def location():
-    return "location"
