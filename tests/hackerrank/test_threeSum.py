@@ -10,7 +10,7 @@ class Test:
     ]
     
     def test_threeSum(self):
-        for case, target, expected in self.test_cases_two:
+        for case, target, expected in self.test_cases_three:
             assert threeSum(case, target) == expected
     
     def test_twoSum(self):
