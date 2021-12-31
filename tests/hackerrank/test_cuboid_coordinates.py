@@ -1,4 +1,4 @@
-from scripts.hackerrank.cuboid_coordinates import cuboid_coordinates
+from scripts.hackerrank.cuboid_coordinates import cuboid_coordinates, cuboid_coordinates_list_comp
 
 
 class Test:
@@ -6,7 +6,7 @@ class Test:
         # x, y, z, n
         [[1, 1, 1, 2], [[0, 0, 0], [0, 0, 1], [0, 1, 0], [1, 0, 0], [1, 1, 1]]]
     ]
-    testable_functions = [cuboid_coordinates]
+    testable_functions = [cuboid_coordinates, cuboid_coordinates_list_comp]
     
     
     def test_cuboid_coordinates(self):
