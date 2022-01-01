@@ -38,3 +38,4 @@ if __name__ == "__main__":
     print(max_subarray_of_size_k(nums, k))
     assert max_subarray_of_size_k(nums, k) == 9
     print(bf_max_subarray_of_size_k(nums, k))
+    assert bf_max_subarray_of_size_k(nums, k) == 9

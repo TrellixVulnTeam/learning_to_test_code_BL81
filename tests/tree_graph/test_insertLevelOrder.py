@@ -5,7 +5,8 @@ from scripts.tree_graph.insertLevelOrder import insertLevelOrder, inorder_python
 class Test:
     # expected 0 traversal type: preorder
     test_cases = [
-        [[5, 4, 8, 11, None, 13, 4, 7, 2, None, None, None, 1], [5, 4, 11, 7, 2, 8, 13, 4, 1]]
+        # [[5, 4, 8, 11, None, 13, 4, 7, 2, None, None, None, 1], [5, 4, 11, 7, 2, 8, 13, 4, 1]]
+        [[1, 2, 3, 4, 5, 6, 6, 6, 6], [6, 4, 6, 2, 5, 1, 6, 3, 6]]
     ]
     testable_functions = [insertLevelOrder]
     
@@ -13,7 +14,8 @@ class Test:
         root = None
         for f in self.testable_functions:
             for case, expected in self.test_cases:
-                assert f(case, root, 0, len(case)) == expected
+                root = f(case, root, 0, len(case))
+                assert inorder_pythonic(root) == expected
                 
     def test_traverseInorder(self):
         root = None
