@@ -1,8 +1,12 @@
+# This file contains three different ways to find the root to leaf paths and return them in a Binary Tree.
+# 1. Recursive 2. Pythonic List Comp. 3. Iterative
+# KZ 1-2-22
 
 
-
-# class to store binary tree node
 class Node:
+    """
+    Class to store binary tree node.
+    """
     def __init__(self, key: int) -> None:
         self.key = key
         self.left = None
@@ -13,7 +17,7 @@ class Node:
     
 def preorder_pythonic(node):
     """
-    Pythonic recursive pre-order traversal
+    Pythonic recursive pre-order traversal.
     """
     return [node.key] + preorder_pythonic(node.left) + preorder_pythonic(node.right) if node else []
 
@@ -21,7 +25,7 @@ def preorder_pythonic(node):
 def binaryTreeRootToLeafPythonic(root):
     if root is None: 
         return []
-    if (root.left == None and root.right == None):
+    if root.left is None and root.right is None:
         return [str(root.key)]
     # if left/right is None we'll get empty list anyway
     return [str(root.key) + '->'+ l for l in 
@@ -30,7 +34,7 @@ def binaryTreeRootToLeafPythonic(root):
 def binaryTreeRootToLeafRecursive(root):
     if root is None: 
         return []
-    if (root.left == None and root.right == None):
+    if root.left is None and root.right is None:
         return [str(root.key)]
 
     # subtree is always a list, though it might be empty 
@@ -44,8 +48,22 @@ def binaryTreeRootToLeafRecursive(root):
 
     return list1
 
-def test_binaryTreeRootToLeafIterative(self):
-    pass
+def binaryTreeRootToLeafIterative(root):
+    res = []
+    stk = [(root, str(root.key))]
+    
+    while stk:
+        curr, path = stk.pop()
+        if curr:
+            if curr != root:   #since a path won't start with a '->', and we've already set the start of the path as str(root.val)
+                path += '->' + str(curr.key)
+            if curr.right:
+                stk.append((curr.right, path))
+            if curr.left:
+                stk.append((curr.left, path))
+            if not curr.right and not curr.left:
+                res.append(path)
+    return res
 
 if __name__ == "__main__":
     root = Node(0)
@@ -59,3 +77,11 @@ if __name__ == "__main__":
     pythonic = binaryTreeRootToLeafPythonic(root)
     pythonic.reverse()
     print(f'pythonic: {pythonic}')
+    
+    recursive = binaryTreeRootToLeafRecursive(root)
+    print(f'recursive: {recursive}')
+    
+    iterative = binaryTreeRootToLeafIterative(root)
+    print(f'iterative: {iterative}')
+    
+    assert pythonic == recursive == iterative
