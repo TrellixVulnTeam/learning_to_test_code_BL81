@@ -9,3 +9,6 @@ class Test:
     
     def test_maxArea(self):
         solution = Solution()
+        for case, expected in self.test_cases:
+            assert solution.maxArea(case) == expected
+            

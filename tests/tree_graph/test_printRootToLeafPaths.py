@@ -34,7 +34,6 @@ class Test:
         
         assert binaryTreeRootToLeafPythonic(test_case[0]) == test_case[1]
         
-
     def binaryTreeRootToLeafIterative(self):
         root = Node(0)
         root.left = Node(1)
