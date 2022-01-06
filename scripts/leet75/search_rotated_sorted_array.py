@@ -29,6 +29,7 @@ class Solution:
         low, high = 0, len(nums)-1
         while low <= high:
             mid = low + (high - low)//2
+            print(low, high, mid)
             if nums[mid] == target: # found the target  
                 return mid
             if nums[low] <= nums[mid]: # LHS is sorted 
@@ -47,7 +48,7 @@ class Solution:
         
 if __name__ == "__main__":
     array = [3, 4, 5, 6, 7, 8, 9]
-    bs = Solution(array)
+    bs = Solution()
     print(bs)
-    print(bs.search(4))
+    print(bs.search(array, 3))
     

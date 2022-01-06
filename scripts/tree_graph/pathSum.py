@@ -1,8 +1,4 @@
-from typing import List
-
-
-class Solution:
-    pass
+from typing import List, Optional
 
 
 class Node:
@@ -10,6 +6,22 @@ class Node:
         self.key = key
         self.left = None
         self.right = None
+
+
+class Solution:
+    def hasPathSum(self, root: Optional[Node], targetSum: int) -> bool:
+        def dfs(node, curSum):
+            if node is None:
+                return False
+            
+            curSum += node.key
+            if not node.left and not node.right:
+                return curSum == targetSum
+            
+            return dfs(node.left, curSum) or \
+                    dfs(node.right, curSum)
+
+        return dfs(root, 0)
 
 
 def inorder_pythonic(root):
@@ -30,3 +42,6 @@ if __name__ == "__main__":
     root.right.right.right = Node(1)
     print(inorder_pythonic(root))
     print(preorder_pythonic(root))
+    
+    solution = Solution()
+    print(solution.hasPathSum(root, 27))
