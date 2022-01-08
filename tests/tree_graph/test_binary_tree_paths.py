@@ -16,9 +16,13 @@ def preorder_pythonic(root):
 
 class Test:
     test_cases = [
-        [[1, 2, 3, None, 5], 
-         [1, 2, 5, 3],
-         ["1->2->5","1->3"]]
+        [[1, 2, 3, None, 5], # case
+         [1, 2, 5, 3], # preorder
+         ["1->2->5","1->3"]], # expected
+    
+        [[0, 1, 2, 3, 4, None, None, None, None], [0, 1, 3, 4, 2],
+        ["0->1->3", "0->1->4", "0->2"]]
+    
     ]
 
 
