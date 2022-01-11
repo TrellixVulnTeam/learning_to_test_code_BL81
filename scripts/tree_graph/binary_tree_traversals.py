@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from collections import deque
 from dataclasses import dataclass
-from typing import Any, Sequence
+from typing import Any, Sequence, List
 
 
 @dataclass
@@ -10,7 +10,6 @@ class DCNode:
     data: int
     left: DCNode | None = None
     right: DCNode | None = None
-
 
 class Node:
     def __init__(self, key) -> str:
@@ -21,6 +20,8 @@ class Node:
     def __str__(self) -> str:
         return str(self.key)
     
+def make_dctree():
+    return DCNode(0, DCNode(1, DCNode(3), DCNode(4)), DCNode(2, DCNode(5)))
     
 def preorder(root):
     return [root.key] + preorder(root.left) + preorder(root.right) if root else []
@@ -30,7 +31,6 @@ def inorder(root):
 
 def createBTree(data, index):
     pNode = None
-
     if index < len(data):
         if data[index] == None:
             return
@@ -41,10 +41,26 @@ def createBTree(data, index):
     
     return pNode
         
-def make_dctree():
-    return DCNode(1, DCNode(2, DCNode(4), DCNode(5)), DCNode(3, DCNode(5)))
+def level_order(root: Node) -> List[Node]:
+    output = []
+    
+    if root is None:
+        return output
+    
+    process_queue = [root]
+    while process_queue:
+        node = process_queue.pop(0)
+        output.append(node.key)
 
+        if node.left:
+            process_queue.append(node.left)
+        if node.right:
+            process_queue.append(node.right)
+    
+    return output
 
+def rootToLeafStack(root: Node) -> List[str]:
+    pass
 
 if __name__ == "__main__":
     print(make_dctree())
@@ -54,3 +70,6 @@ if __name__ == "__main__":
     print(root)
     print(preorder(root))
     print(inorder(root))
+    
+    level_order = level_order(root)
+    print(level_order)

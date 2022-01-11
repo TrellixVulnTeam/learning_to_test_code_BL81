@@ -79,6 +79,17 @@ def deleteNode(root: Node, key: int) -> None:
             
     return root
 
+def tree_build():
+    root = None
+    root = insert(root, 8)
+    root = insert(root, 3)
+    root = insert(root, 1)
+    root = insert(root, 6)
+    root = insert(root, 10)
+    root = insert(root, 4)
+    return root
+
+
 
 if __name__ == "__main__":
     root = Node(0)
