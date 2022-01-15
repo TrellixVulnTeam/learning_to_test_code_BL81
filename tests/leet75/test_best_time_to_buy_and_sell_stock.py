@@ -11,7 +11,3 @@ class Test:
     def test_solution(self):
         for case, expected in self.test_cases:
             assert expected == self.solution.maxProfit(case)
-
-    def test_optimized_solution(self):
-        for case, expected in self.test_cases:
-            assert expected == self.solution.maxProfitSlidingWindow(case)

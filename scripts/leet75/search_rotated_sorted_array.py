@@ -21,34 +21,22 @@ Example 2:
 Input: nums = [4,5,6,7,0,1,2], target = 3
 Output: -1
 
+Example 3:
+
+Input: nums = [1], target = 0
+Output: -1
 """
 
 class Solution:
-
     def search(self, nums: List[int], target: int) -> int:
-        low, high = 0, len(nums)-1
-        while low <= high:
-            mid = low + (high - low)//2
-            print(low, high, mid)
-            if nums[mid] == target: # found the target  
-                return mid
-            if nums[low] <= nums[mid]: # LHS is sorted 
-                if nums[low] <= target < nums[mid]:
-                    high = mid - 1
-                else:
-                    low = mid + 1
-            else: # RHS is sorted
-                if nums[mid] < target <= nums[high]:
-                    low = mid + 1
-                else:
-                    high = mid - 1
-        return -1
-                    
+        pass
                     
         
 if __name__ == "__main__":
     array = [3, 4, 5, 6, 7, 8, 9]
     bs = Solution()
+    
     print(bs)
     print(bs.search(array, 3))
+    assert bs.search(array, 3) == 4
     
