@@ -25,9 +25,28 @@ Output: false
 
 class Solution:
     def isValid(self, s: str) -> bool:
-        pass
+        stack = []
+        
+        mappings = {
+            "}" : "{",
+            "]" : "[",
+            ")" : "("
+        }
+        
+        for char in s:
+            # if closing bracket..
+            if char in mappings:
+                if stack and stack[-1] == mappings[char]:
+                    stack.pop()
+                else:
+                    return False
+            # opening brakcet..so add to stack    
+            else:
+                stack.append(char)
+        
+        return True if not stack else False
+        
                 
-##
 if __name__ == "__main__":
     s = "()"
     
