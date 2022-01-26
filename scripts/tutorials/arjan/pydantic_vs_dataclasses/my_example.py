@@ -19,8 +19,9 @@ import httpx
 class Ticker(BaseModel):
     name: str
     
-    def __init__(self, name: str):
-        super().__init__(name=name)
+    @classmethod
+    def custom_init(cls, name: str):
+        return cls(name=name)
 
     # required for API_PATTERN format string in StockData constructor    
     def __str__(self):
@@ -42,7 +43,7 @@ class StockData:
     async def gather_async(self):
         tickers = ["AAPL", "FB"]
         for ticker in tickers:
-            ticker = Ticker(ticker)
+            ticker = Ticker.custom_init(ticker)
             self.tasks.append(self.get_ticker_async(ticker))
         await asyncio.gather(*self.tasks)
         return self.results
@@ -69,20 +70,10 @@ class StockData:
         # Read data from a JSON file
         with open("scripts/tutorials/arjan/pydantic_vs_dataclasses/aapl_fb.json") as file:
             data = json.load(file) # dict
-            tickers: List[Ticker] = [Ticker(item["ticker"]) for item in data["data"]]
+            tickers: List[Ticker] = [Ticker.custom_init(item["ticker"]) for item in data["data"]]
             print(tickers[0].name)
         return tickers
-            
-# res = []
-# for item in data["data"]:
-#     print(item)
-#     ticker = Ticker(item["ticker"])
-#     res.append(ticker)
-#     print('-')
     
-# return res
-
-
 
 if __name__ == "__main__":
     
