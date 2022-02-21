@@ -38,7 +38,7 @@ class ATCShop:
         
     def create_clearance(self, callsign: str) -> Flyer:
         clear_flyer = self.clearance_factory(callsign)
-        print(f"{callsign} is clear for takeoff")
+        print(f"{clear_flyer} is clear for takeoff")
         return clear_flyer
     
 def main() -> None:
