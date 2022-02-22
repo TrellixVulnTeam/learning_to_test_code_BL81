@@ -1,14 +1,19 @@
 import random
 from typing import Type
+from abc import ABC, abstractmethod
 
 
-class Flyer:
+class Flyer(ABC):
     def __init__(self, callsign: str) -> None:
         self.callsign = callsign
 
+    @abstractmethod
     def takeoff(self) -> None:
         raise NotImplementedError
 
+    def concrete_method(self):
+        return True
+        
     def __str__(self) -> str:
         raise NotImplementedError
 
