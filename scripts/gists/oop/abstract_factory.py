@@ -1,16 +1,21 @@
 import pytest
 import random
 from typing import Type
+from abc import ABC, abstractmethod
 
 # (venv) (base) batman@the-bank:~/Desktop/learning_to_test_code$ python -m pytest tests/gists/oop/ -vv
 
-class Pet:
+class Pet(ABC):
     """This could be ABC"""
     def __init__(self, name: str) -> None:
         self.name = name
 
+    @abstractmethod
     def speak(self) -> None:
         raise NotImplementedError
+    
+    def concrete_method(self):
+        return True
     
     def __str__(self):
         raise NotImplementedError
