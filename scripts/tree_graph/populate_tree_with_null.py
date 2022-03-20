@@ -11,14 +11,14 @@ class Node(object):
         self.left = None
         self.right = None
  
-def creatBTree(data, index):
+def createBTree(data, index):
     pNode = None
     if index < len(data):
         if data[index] == None:
             return
         pNode = Node(data[index])
-        pNode.left = creatBTree(data, 2 * index + 1) # [1, 3, 7, 15, ...]
-        pNode.right = creatBTree(data, 2 * index + 2) # [2, 5, 12, 25, ...]
+        pNode.left = createBTree(data, 2 * index + 1) # [1, 3, 7, 15, ...]
+        pNode.right = createBTree(data, 2 * index + 2) # [2, 5, 12, 25, ...]
     return pNode 
 
 def preorder_pythonic(root):
@@ -29,6 +29,6 @@ if __name__ == "__main__":
     lst = [5,4,8,11,None,13,4,7,2,None,None,None,1]
     lst = [1, 2, 3, None, 5]
 
-    root = creatBTree(lst, 0)
+    root = createBTree(lst, 0)
     print(preorder_pythonic(root))
     
