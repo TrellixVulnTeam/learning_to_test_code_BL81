@@ -8,6 +8,7 @@ country = [
     {"country" : "Switzerland", "population" : 3000}
 ]
 
+# reminder: list sorts in place and doesnt return anything
 country.sort(reverse=True, key=lambda e: len(e['country']))
 
 for c in country:
