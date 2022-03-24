@@ -4,6 +4,8 @@
 #  1. object that can be iterated upon
 #  2. implements __iter__() and __next__() special methods (collectively called the "iterator protocol")
 
+from typing import List
+
 # define list (my_list is an iterable..remember: iterable is object that can return iterator)
 my_list = [4, 7, 0, 3]
 
@@ -47,3 +49,18 @@ while True:
         break
 
 # Summary: So bascially under the hood..a for loop creates an iterator object from an iterable by doing a iter_obj = iter(iterable)...and then an infinite while loop just gets the next value in iter_obj using the next() function until the StopIteration exception is raised...where we break and the program ends to "gracefully exit" when the program runs out of values
+
+class SimpleIterator:
+    def __init__(self, nums: List[int]):
+        self.nums = nums
+        self.iterable = iter(self.nums)
+
+    def get_next(self):
+        return self.iterable.__next__()
+
+if __name__ == '__main__':
+    nums = [1, 2, 3, 4]
+    si = SimpleIterator(nums)
+    print(si.iterable)
+    print(si.get_next())
+
