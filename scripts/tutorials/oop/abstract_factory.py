@@ -21,8 +21,6 @@ class Pet(ABC):
     def speak(self):
         pass
 
-    def __str__(self):
-        return str(self.name)
 
 class Dog(Pet):
     """
@@ -34,6 +32,9 @@ class Dog(Pet):
     def speak(self):
         return "grrrr"
 
+    def __str__(self):
+        return f'Dog<{self.name}>'
+
 class Cat(Pet):
     """
     Concrete Product B.
@@ -43,6 +44,9 @@ class Cat(Pet):
 
     def speak(self):
         return "meow"
+
+    def __str__(self):
+        return f'Cat<{self.name}>'
     
 class PetShopAbstractFactory(ABC):
     """
@@ -58,7 +62,7 @@ class PetShopAbstractFactory(ABC):
     def __str__(self):
         return f'type: {self.__class__}'
 
-class CatPetShopConcreteFactory(PetShopAbstractFactory):
+class PetShopConcreteFactory(PetShopAbstractFactory):
     """
     Concrete Factory
     """
@@ -67,12 +71,18 @@ class CatPetShopConcreteFactory(PetShopAbstractFactory):
 
     def buy_pet(self, name: str) -> Pet:
         pet = self.pet_factory(name)
-        print(f'Here is your lovely pet {pet}')
+        print(f'Here is your lovely {pet}')
         return pet
     
 if __name__ == "__main__":
-    cat_shop = CatPetShopConcreteFactory(Cat)
-    # print(cat_shop)
+    cat_shop = PetShopConcreteFactory(Cat)
+    print(cat_shop)
     pet = cat_shop.buy_pet("Lucy")
     print(pet.speak())
     
+    print("=" * 50)
+
+    dog_shop = PetShopConcreteFactory(Dog)
+    print(dog_shop)
+    pet = dog_shop.buy_pet("Alvin")
+    print(pet.speak())
