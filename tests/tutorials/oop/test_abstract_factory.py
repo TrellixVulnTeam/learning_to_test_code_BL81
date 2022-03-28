@@ -12,3 +12,5 @@ class TestCat(unittest.TestCase):
         cat = Cat("alice")
         assert cat.name == "alice"
         assert cat.speak() == "meow"
+
+# https://stackoverflow.com/questions/32643907/how-to-test-an-abstract-factory

@@ -60,7 +60,7 @@ class PetShopAbstractFactory(ABC):
         pass
 
     def __str__(self):
-        return f'type: {self.__class__}'
+        return f'Factory<{self.pet_factory.__name__}>'
 
 class PetShopConcreteFactory(PetShopAbstractFactory):
     """
