@@ -1,0 +1,5 @@
+Example1:
+To test learning_to_test_code/tutorials/snippets
+
+run from learning_to_test_code root: 
+    (venv) (base) Kevins-MBP:learning_to_test_code peppermint$ python -m pytest tests/tutorials/snippets/

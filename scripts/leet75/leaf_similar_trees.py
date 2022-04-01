@@ -11,26 +11,29 @@ class TreeNode:
 
 class Solution:
     def leafSimilar(self, root1: Optional[TreeNode], root2: Optional[TreeNode]) -> bool:
-        # Only need to use this locally
-        # tree1 = self.createBTree(root1, 0)
-        # tree2 = self.createBTree(root2, 0)
-        # return self.get_leafs(tree1) == self.get_leafs(tree2)
         leafs1 = []
         leafs2 = []
+        
         def dfs(root, results):
+            # closure
             if root is None:
                 return
             
-            if not root.left and not root.right:
+            if root.left is None and root.right is None:
                 print(f'leaf: {root.val}')
                 results.append(root.val)
-            
+                
             return dfs(root.left, results) or \
                     dfs(root.right, results)
+    
         dfs(root1, leafs1)
-        dfs(root2, leafs2)
         print(leafs1)
+        
+        dfs(root2, leafs2)
         print(leafs2)
+        
+        print(leafs1 == leafs2)
+        return leafs1 == leafs2
 
 
     def createBTree(self, data, index):
@@ -58,5 +61,5 @@ if __name__ == '__main__':
     print(soln.preorder_pythonic(root2))
 
     assert soln.preorder_pythonic(root1) == [3, 5, 6, 2, 7, 4, 1, 9, 8]
-    # assert soln.leafSimilar(root1, root2) == True
+    assert soln.leafSimilar(root1, root2) == True
     print(soln.leafSimilar(root1, root2))

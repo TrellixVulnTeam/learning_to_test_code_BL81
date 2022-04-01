@@ -1,4 +1,3 @@
-from curses.ascii import SO
 from scripts.leet75.three_sum import Solution
 
 
