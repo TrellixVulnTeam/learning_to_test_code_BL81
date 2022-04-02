@@ -16,11 +16,11 @@ class Creator:
 
 class ConcreteDogShop(Creator):
     def factory_method(self) -> Cat: # tricky
-        return Cat()
+        return Dog()
 
 class ConcreteCatShop(Creator):
     def factory_method(self) -> Dog: # tricky
-        return Dog()
+        return Cat()
 
 class Pet(ABC):
     @abstractmethod
@@ -29,16 +29,18 @@ class Pet(ABC):
 
 class Dog(Pet):
     def speak(self):
-        return "woof"
+        return "*woof*"
 
 class Cat(Pet):
     def speak(self):
-        return "meow"
+        return "*meow*"
 
 def client_code(creator: Creator):
     print(f"Client: I'm not aware of the creator's class, but it still works.\n"
     f"{creator.some_operation()}", end="")
 
 if __name__ == '__main__':
-    creator = ConcreteCatShop()
-    client_code(creator)
+    creators = [ConcreteCatShop(), ConcreteDogShop()]
+    for creator in creators:
+        client_code(creator)
+        print("\n")
