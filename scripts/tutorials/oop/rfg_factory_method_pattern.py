@@ -59,5 +59,6 @@ if __name__ == '__main__':
 
     print("\n")
 
+    print("App: Launch a different way...")
     factory = read_factory("cc1")
     client_code(factory)
