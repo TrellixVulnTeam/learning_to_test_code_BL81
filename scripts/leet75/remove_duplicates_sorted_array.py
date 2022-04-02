@@ -39,7 +39,8 @@ Explanation: Your function should return k = 5, with the first five elements of 
 It does not matter what you leave beyond the returned k (hence they are underscores).
 """
 
-
+class Solution:
+    pass
 
 
 if __name__ == '__main__':

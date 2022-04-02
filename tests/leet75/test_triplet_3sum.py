@@ -1,4 +1,4 @@
-from scripts.leet75.three_sum import Solution
+from scripts.leet75.triplet_3sum import Solution
 
 
 class Test:

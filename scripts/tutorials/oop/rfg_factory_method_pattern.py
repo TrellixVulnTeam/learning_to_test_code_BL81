@@ -33,6 +33,13 @@ class ConcreteProduct2(Product):
     def operation(self):
         return "{Result of the ConcreteProduct2}"
 
+def read_factory(obj_type: str) -> Creator:
+    factories = {
+        "cc1" : ConcreteCreator1(),
+        "cc2" : ConcreteCreator2()
+    }
+    return factories[obj_type]
+
 def client_code(creator: Creator):
     print(
         f'Client: Im not aware of the creators class, but it still works.\n'
@@ -49,3 +56,8 @@ if __name__ == '__main__':
     print("App: Launced with ConcreteCreator2.")
     creator = ConcreteCreator2()
     client_code(creator)
+
+    print("\n")
+
+    factory = read_factory("cc1")
+    client_code(factory)
