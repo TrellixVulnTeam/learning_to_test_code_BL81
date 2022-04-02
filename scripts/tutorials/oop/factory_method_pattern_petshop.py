@@ -15,11 +15,11 @@ class Creator:
         
 
 class ConcreteDogShop(Creator):
-    def factory_method(self) -> Cat: # tricky
+    def factory_method(self) -> Dog: # tricky
         return Dog()
 
 class ConcreteCatShop(Creator):
-    def factory_method(self) -> Dog: # tricky
+    def factory_method(self) -> Cat: # tricky
         return Cat()
 
 class Pet(ABC):
