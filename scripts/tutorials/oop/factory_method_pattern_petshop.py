@@ -55,16 +55,19 @@ def client_code2():
             print("Unknown option.")
 
 if __name__ == '__main__':
+    # 1.
     creator = ConcreteCatShop()
     client_code(creator)
 
     print("\n")
 
-    # also..
+    # 2.
     creators = [ConcreteCatShop(), ConcreteDogShop()]
     for creator in creators:
         client_code(creator)
         print("\n")
 
-    # also...
+    print("\n")
+    
+    # 3.
     client_code2()
