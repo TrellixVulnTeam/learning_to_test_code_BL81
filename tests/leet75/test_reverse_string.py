@@ -5,7 +5,9 @@ class Test:
 
     test_cases = [
         [["h", "e", "l", "l", "o"], ["o","l","l","e","h"]],
-        [["H","a","n","n","a","h"], ["h","a","n","n","a","H"]]
+        [["H","a","n","n","a","h"], ["h","a","n","n","a","H"]],
+        [["h"], ["h"]],
+        [[], []],
     ]
 
     def test_reverse_string(self):

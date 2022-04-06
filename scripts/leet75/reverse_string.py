@@ -11,17 +11,22 @@ class Solution:
         # cant do this because have to modify in place with O(1) extra memory
         # return s[::-1]
         
-        for i in range(len(s)):
-            s[i] = s[-1]
-            print(s)
+        l, r = 0, len(s) -1
+        while l < r:
+            s[l], s[r] = s[r], s[l]
+            l += 1
+            r -= 1
+        return s
 
 
 if __name__ == '__main__':
-    str1 = ["h","e","l","l","o"]
-    expected = ["o","l","l","e","h"]
+    # input1 = ["h","e","l","l","o"]
+    input1 = []
+    expected = []
 
     soln = Solution()
-    assert soln.reverseString(str1) == expected
+    print(soln.reverseString(list(input1)))
+    assert soln.reverseString(list(input1)) == expected
 
 
 
