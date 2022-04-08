@@ -16,6 +16,12 @@ class Test:
         for case, expected in self.test_cases:
             assert soln.reverseString(case) == expected
 
+    def test_reverse_string_recursive(self):
+        soln = Solution()
+        
+        for case, expected in self.test_cases:
+            assert soln.reverseStringRecursive(case) == expected
+
 
 if __name__ == '__main__':
     soln = Solution()

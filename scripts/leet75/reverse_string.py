@@ -18,27 +18,31 @@ class Solution:
             r -= 1
         return s
 
+    # def reverseStringRecursive(self, s: List[str]) -> None:
+    #     final_result = ""
+    #     def helper(s, final):
+    #         ss = "".join(s)
+    #         if len(ss) == 0:
+    #             return s
+    #         else:
+    #             res = helper(ss[1:], final) + ss[0]
+    #             print(f'res: {res}')
+    #             final += res
+    #             print(f'final: {final}')
+    #             return final        
+    #     return helper(s, final_result)    
 
 if __name__ == '__main__':
-    # input1 = ["h","e","l","l","o"]
-    input1 = []
-    expected = []
+    input1 = ["h","e","l","l","o"]
+    expected = ["o", "l", "l", "e", "h"]
+    # input1 = []
+    # expected = []
 
     soln = Solution()
     print(soln.reverseString(list(input1)))
     assert soln.reverseString(list(input1)) == expected
 
+    # soln = Solution()
+    # print(soln.reverseStringRecursive(list(input1)))
+    # assert soln.reverseStringRecursive(list(input1)) == expected
 
-
-# Tricky!
-# test_cases = [
-#     ["h", "e", "l", "l", "o"], ["o","l","l","e","h"]
-# ]
-# print(test_cases[0])
-# test_cases = [
-#     [["h", "e", "l", "l", "o"], ["o","l","l","e","h"]]
-# ]
-# print(test_cases[0])
-
-# for case, exp in test_cases:
-#     print(case, exp)
