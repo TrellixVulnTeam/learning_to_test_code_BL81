@@ -17,6 +17,7 @@ da = DocumentArray([d1, d2])
 
 da.summary()
 d1.chunks.match(d2.chunks)
+da.summary()
 
 
 
