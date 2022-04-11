@@ -1,17 +1,5 @@
 # Is it possible to have a DocArray of DocArrays?
 
-# Joan Fontanals (Jina AI):
-# Document is a recursive structure, so by using chunks u can definitely have it
-
-# Han (Jina AI)  3 days ago
-# guess what, it already is.
-
-# Carlos Mauro Osorio Osorio  3 days ago
-# i wanna match each chunk of d1 with each chunk of d2... what is the best for wrapping d1 and d2 as documentarrays so they would be matchable? chunks convert into documents automatically?
-
-# Joan Fontanals (Jina AI)  3 days ago
-# u can do 
-# d1.chunks.match(d2.chunks)
 
 from docarray import Document, DocumentArray
 import numpy as np
