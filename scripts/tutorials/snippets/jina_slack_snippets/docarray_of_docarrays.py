@@ -1,6 +1,5 @@
 # Is it possible to have a DocArray of DocArrays?
 
-
 from docarray import Document, DocumentArray
 import numpy as np
 
