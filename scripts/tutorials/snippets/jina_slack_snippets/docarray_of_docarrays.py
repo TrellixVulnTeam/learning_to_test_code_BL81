@@ -6,23 +6,31 @@
 # Han (Jina AI)  3 days ago
 # guess what, it already is.
 
-from docarray import Document, DocumentArray
-import numpy as np
-
-d1 = Document(chunks=[Document(embedding=np.array([1, 2, 3])), Document(embedding=np.array([1, 2, 3]))])
-d2 = Document(chunks=[Document(embedding=np.array([1, 2, 3])), Document(embedding=np.array([1, 2, 3]))])
-da = DocumentArray([d1, d2])
-
-da.summary()
-d1.chunks.match(d2.chunks) # gives error
-
-
 # Carlos Mauro Osorio Osorio  3 days ago
 # i wanna match each chunk of d1 with each chunk of d2... what is the best for wrapping d1 and d2 as documentarrays so they would be matchable? chunks convert into documents automatically?
 
 # Joan Fontanals (Jina AI)  3 days ago
 # u can do 
 # d1.chunks.match(d2.chunks)
+
+from docarray import Document, DocumentArray
+import numpy as np
+
+# Original question that throws error when we try to do d1.chunks.match(d2.chunks
+# d1 = Document(chunks=[Document(), Document()])
+# d2 = Document(chunks=[Document(), Document()])
+# da = DocumentArray([d1, d2])
+# da.summary()
+
+# Adapted answer b/c above will give error when we try to do d1.chunks.match(d2.chunks
+d1 = Document(chunks=[Document(embedding=np.array([1, 2, 3])), Document(embedding=np.array([1, 2, 3]))])
+d2 = Document(chunks=[Document(embedding=np.array([1, 2, 3])), Document(embedding=np.array([1, 2, 3]))])
+da = DocumentArray([d1, d2])
+
+da.summary()
+d1.chunks.match(d2.chunks)
+
+
 
 """"
 Extended convo below. Very helpful!
