@@ -16,10 +16,10 @@ d2 = Document(chunks=[Document(embedding=np.array([1, 2, 3])), Document(embeddin
 da = DocumentArray([d1, d2])
 
 da.summary()
+
+d1.summary()
 d1.chunks.match(d2.chunks)
-da.summary()
-
-
+d1.summary()
 
 """"
 Extended convo below. Very helpful!
