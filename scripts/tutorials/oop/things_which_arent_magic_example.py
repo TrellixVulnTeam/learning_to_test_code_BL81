@@ -1,8 +1,6 @@
 # https://ains.co/blog/things-which-arent-magic-flask-part-1.html
 # KZ 4-7-22
 
-# FlowManager is abstraction layer thats more abstract than the most abstract thing in Jina which is the Flow. This FlowManager abstraction layer will allow us to move up one abstraction layer and force specific Flows to be implemented..namely 1) indexing and 2) searching.
-
 from functools import wraps
 from abc import ABC, abstractmethod
 
