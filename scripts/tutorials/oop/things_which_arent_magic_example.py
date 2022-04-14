@@ -3,15 +3,28 @@
 
 # FlowManager is abstraction layer thats more abstract than the most abstract thing in Jina which is the Flow. This FlowManager abstraction layer will allow us to move up one abstraction layer and force specific Flows to be implemented..namely 1) indexing and 2) searching.
 
+from functools import wraps
+from abc import ABC, abstractmethod
 
 
+class NotFlask(ABC):
+    def __init__(self):
+        pass
 
-class NotFlask:
+    @abstractmethod
+    def route(self):
+        pass
+
+    @abstractmethod
+    def serve(self):
+        pass
+
+
+class NotFlaskTry(NotFlask):
     def __init__(self):
         self.routes = {}
 
     def route(self, route_str):
-        # note you aren't calling the function you're wrapping in the decorator. you're just using the decorator to put it in the self.routes dictionary and then returning the function. you will actually call this decorated function when you do a app.serve("/path")
         def decorator(f):
             self.routes[route_str] = f
             return f
@@ -25,17 +38,18 @@ class NotFlask:
             raise ValueError(f"route {path} not registered.")
         
 
-app = NotFlask()
-
-@app.route("/index")
-def index():
-    return "[INFO] running index."
-
-@app.route("/search")
-def search():
-    return "[INFO] running search."
-
-
 if __name__ == "__main__":
+    app = NotFlaskTry()
+
+    @app.route("/index")
+    def index():
+        return "[INFO] running index."
+
+    @app.route("/search")
+    def search():
+        return "[INFO] running search."
+
+    print(app.routes)
     print(app.serve("/index"))
+    print(app.serve("/search"))
 
