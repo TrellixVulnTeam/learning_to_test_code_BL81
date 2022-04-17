@@ -3,30 +3,55 @@
 
 # In this example we do the following:
 # 1. Use "from_csv" to load Documents
-# 2. Remove our original "docs" DocumentArray
+# 2. Index Document
+# 3. Perform Search
 
+import os
 from jina import Flow
 from docarray import Document, DocumentArray
+import pathlib
+import shutil
 
-# Pull Documents from a CSV file. For each line of the file, create one Document where `Document.text` comes from the line's content.
-docs = DocumentArray.from_csv("data.csv")
+
+def print_search_results(docs):
+    left_da = docs[0]
+    
+    print(f"\nYour search results for: {left_da.text}")
+    print("-------------------\n")
+    
+    for match in left_da.matches:
+        print(f"> {match.scores['cosine'].value:.3f} - {match.text}")
+
+
+docs = DocumentArray.from_csv("data/data.csv")
+# docs = DocumentArray.from_csv("data/anime.csv")
+# docs = DocumentArray.from_csv("data/simpsons_script_lines.csv")
+
+current_dir = pathlib.Path(__file__).parent.resolve()
+if os.path.exists(os.path.join(current_dir, "workspace")):
+    print("[INFO] removing existing workspace...")
+    shutil.rmtree(os.path.join(current_dir, "workspace"))
 
 flow = (
-    Flow()
-    .add(
-        uses="jinahub+sandbox://CLIPTextEncoder",
-    )
-    .add(
-        uses="jinahub+sandbox://SimpleIndexer",
-        uses_metas={"workspace": "workspace"},
-        volumes="./workspace:/workspace/workspace",
+    Flow(
+        port=12345
+    ).add(
+        uses="jinahub://CLIPTextEncoder/latest",
+        name="encoder",
+        uses_with={"device": "cpu"},
+    ).add(
+        uses="jinahub://SimpleIndexer/latest",
         name="indexer",
+        install_requirements=True
     )
 )
 
+
 with flow:
-    flow.index(inputs=docs)
+    flow.index(inputs=docs, show_progress=True)
     query = Document(text=input("Please enter your search term: "))
     response = flow.search(inputs=query)
 
+# print_search_results(response)
+print(response[0].matches[:1, ('text', 'scores__cosine__value')])
 print("[INFO] program finished.")
