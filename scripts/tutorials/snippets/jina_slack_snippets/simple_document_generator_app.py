@@ -24,8 +24,6 @@ def print_search_results(docs):
 
 
 docs = DocumentArray.from_csv("data/data.csv")
-# docs = DocumentArray.from_csv("data/anime.csv")
-# docs = DocumentArray.from_csv("data/simpsons_script_lines.csv")
 
 current_dir = pathlib.Path(__file__).parent.resolve()
 if os.path.exists(os.path.join(current_dir, "workspace")):
@@ -52,6 +50,6 @@ with flow:
     query = Document(text=input("Please enter your search term: "))
     response = flow.search(inputs=query)
 
-# print_search_results(response)
-print(response[0].matches[:1, ('text', 'scores__cosine__value')])
+print_search_results(response)
+# print(response[0].matches[:1, ('text', 'scores__cosine__value')])
 print("[INFO] program finished.")
