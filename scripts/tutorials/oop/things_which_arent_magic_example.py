@@ -35,29 +35,8 @@ class NotFlaskTry(NotFlask):
         else:
             raise ValueError(f"route {path} not registered.")
         
-class Strategy(ABC):
-    def __init__(self):
-        pass
-
-    @abstractmethod
-    def run(self):
-        pass
-
-class IndexOnlyStrategy(Strategy):
-    pass
-
-class IndexSearchStrategy(Strategy):
-    pass
-
-"""
-^^^
-this wont work. Think hard about this and why builder solves this (assuming index/search both going to be used just in different orders)
-"""
 
 if __name__ == "__main__":
-    # strategy = IndexOnlyStrategy()
-    # app = NotFlaskTry(strategy)
-
     app = NotFlaskTry()
 
     @app.route("/index")
