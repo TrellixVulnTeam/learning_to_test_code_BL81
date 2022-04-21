@@ -44,7 +44,6 @@ flow = (
     )
 )
 
-
 with flow:
     flow.index(inputs=docs, show_progress=True)
     query = Document(text=input("Please enter your search term: "))
