@@ -22,8 +22,7 @@ def print_search_results(docs):
     for match in left_da.matches:
         print(f"> {match.scores['cosine'].value:.3f} - {match.text}")
 
-
-docs = DocumentArray.from_csv("data/data.csv")
+docs = DocumentArray.from_csv("data/family_guy_dialog.csv", field_resolver={"dialog": "text"})
 
 current_dir = pathlib.Path(__file__).parent.resolve()
 if os.path.exists(os.path.join(current_dir, "workspace")):
