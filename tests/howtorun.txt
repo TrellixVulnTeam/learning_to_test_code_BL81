@@ -3,3 +3,6 @@ To test learning_to_test_code/tutorials/snippets
 
 run from learning_to_test_code root: 
     (venv) (base) Kevins-MBP:learning_to_test_code peppermint$ python -m pytest tests/tutorials/snippets/
+
+# Update 4-27-22
+I had a little problem with this working for some reason today. I'm fairly confident I didn't change anything major so I cant be too sure on what the cause was, but I fixed it by deleting the virtual environment and then recreating the virtual environment and it worked.

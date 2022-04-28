@@ -1,4 +1,4 @@
-#!/home/batman/Desktop/learning_to_test_code/venv/bin/python3.10
+#!/Users/peppermint/Desktop/codes/python/learning_to_test_code/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
