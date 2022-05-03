@@ -1,9 +1,13 @@
 # question logged 4-27-22
 
+
 from typing import List
 
+# Time/space analysis Solution1
+# time: O(n) because two times through list, but only 1) keep fastest growing term and 2) drop constants
+# space: O(1)? for dict?
 
-class Solution:
+class Solution1:
     def containsDuplicate(self, nums: List[int]) -> bool:
         counts = {}
         
@@ -15,6 +19,5 @@ class Solution:
                 return True
         return False
 
-
-if __name__ == '__main__':
+class Solution2:
     pass

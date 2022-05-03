@@ -1,4 +1,4 @@
-from scripts.v2_leet75.contains_duplicate import Solution
+from scripts.v2_leet75.contains_duplicate import Solution1, Solution2
 
 
 class Test:
@@ -11,6 +11,7 @@ class Test:
     ]
 
     def test_contains_duplicate(self):
-        soln = Solution()
+        soln1, soln2 = Solution1(), Solution2()
         for case, expected in self.test_cases:
-            assert soln.containsDuplicate(case) == expected
+            assert soln1.containsDuplicate(case) == expected
+            assert soln2.containsDuplicate(case) == expected
