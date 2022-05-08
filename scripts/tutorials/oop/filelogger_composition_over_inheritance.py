@@ -1,4 +1,4 @@
-# This file demonstrates why you should favor composition over inheritance. The Gang of Four point out very explicitly that you should favor composition over inheritance, mainly because you get the "subclass" explosion problem when you try to modify a class along multiple axes.
+s# This file demonstrates why you should favor composition over inheritance. The Gang of Four point out very explicitly that you should favor composition over inheritance, mainly because you get the "subclass" explosion problem when you try to modify a class along multiple axes.
 
 # The total number of classes will increase geometrically if m and n both continue to grow. This is the “proliferation of classes” and “explosion of subclasses” that the Gang of Four want to avoid.
 

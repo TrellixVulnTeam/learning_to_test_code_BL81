@@ -20,4 +20,23 @@ class Solution1:
         return False
 
 class Solution2:
-    pass
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        hashset = set()
+
+        for num in nums:
+            if num in hashset:
+                return True
+            else:
+                hashset.add(num)
+        return False
+
+if __name__ == '__main__':
+    nums = [1,2,3,1]
+
+    soln1 = Solution1()
+    print(soln1.containsDuplicate(nums))
+
+    soln2 = Solution2()
+    print(soln1.containsDuplicate(nums))
+
+    # assert soln1.containsDuplicate(nums) == True

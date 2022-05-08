@@ -19,7 +19,12 @@ class Album:
     def __str__(self) -> str:
         return f"Album '{self.name}' by {self.artist}\nTracklist:{self.songs}"
 
-    # breaks the
+    # breaks the SRP if you do this
+    def search_album_by_artist(self):
+        """
+        search db for other items by same artist
+        """
+        pass
 
 if __name__ == "__main__":
     album1 = Album("facts", "kevin")
